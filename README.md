@@ -13,3 +13,18 @@ OSS web直传---直接在JS签名
 10. 此方法是直接在前端签名，有accessid/accesskey泄漏的风险, 线上生产请使用后端签名例子点击查看详细文档
 https://help.aliyun.com/document_detail/oss/practice/pc_web_upload/js_php_upload.html
 
+步骤 3：修改配置文件
+
+将下载包解压后，修改upload.js文件：
+accessid= '<yourAccessKeyId>';
+accesskey= <yourAccessKeySecrety>';
+//如果是STS方式====
+accessid = 'STS.ACCESSKEYID';
+accesskey = 'STS.ACCESSSECRET';
+token = 'STS.token';
+//===========
+host = 'http://post-test.oss-cn-hangzhou.aliyuncs.com';
+$id：您的AccessKeyId
+$key：您的AessKeySecret
+$host：格式为BucketName.Endpoint，例如post-test.oss-cn-hangzhou.aliyuncs.com
+
